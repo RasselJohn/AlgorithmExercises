@@ -1,3 +1,5 @@
+# Convert Haffman's code to string.
+
 def parse_haffman_code(coded_str: str, sym_table: dict):
     """
     Return string by Haffman's code.

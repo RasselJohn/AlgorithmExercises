@@ -1,4 +1,5 @@
-# Huffman coding
+# Huffman coding.
+
 from collections import Counter
 
 sorted_tree = lambda tree: sorted(tree, key=lambda ss: ss[0], reverse=True)
