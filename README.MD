@@ -1,5 +1,3 @@
-*AlgorithmExercises*
+*Algorithm Exercises*
 =================
-
-Different exercises by Python.
-
+Algorithm exercises was realized on Python.
