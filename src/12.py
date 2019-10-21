@@ -27,11 +27,11 @@ class NeuralNetwork:
         # results - correct answers
 
         for i, input_values in enumerate(inputs):
-            output = self.get_final_output(input_values)
+            outputs = self.get_final_output(input_values)
 
             # output contents final predicted result
-            self.correct_weights(output, results[i])
-            yield output[-1]
+            self.correct_weights(outputs, results[i])
+            yield outputs[-1]
 
     def get_final_output(self, one_input_values):
         output = one_input_values[:]
@@ -54,15 +54,18 @@ class NeuralNetwork:
 
         return output[1:]  # remove input values
 
-    def correct_weights(self, output, correct_result):
-        for o, r in zip(output, correct_result):
-            if o == r:
-                continue
+    def correct_weights(self, outputs, correct_result):
+        for output in reversed(outputs):
+            index = 0
+            new_curr_layer_weights = []
+            for o, r in zip(output, correct_result):
+                if o == r:
+                    index += 1
+                    continue
+                # for every layer
+                for curr_layer_index in range(self.layers - 1, -1, -1):
+                    old_curr_layer_weights = self.weights[curr_layer_index]
 
-            # for every layer
-            for curr_layer_index in range(self.layers - 1, -1, -1):
-                old_curr_layer_weights = self.weights[curr_layer_index]
-                new_curr_layer_weights = []
 
     def sigma(self, val):
         return 1 / (1 + exp(-1 * val))
