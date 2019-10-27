@@ -31,7 +31,7 @@ class NeuralNetwork:
 
             # output contents final predicted result
             self.correct_weights(outputs, results[i])
-            yield outputs[-1]
+            # yield outputs[-1]
 
     def get_final_output(self, one_input_values):
         output = one_input_values[:]
@@ -54,7 +54,7 @@ class NeuralNetwork:
 
         return output[1:]  # remove input values
 
-    def correct_weights(self, outputs, correct_result):
+    def  correct_weights(self, outputs, correct_result):
         for output in reversed(outputs):
             index = 0
             new_curr_layer_weights = []
@@ -65,7 +65,6 @@ class NeuralNetwork:
                 # for every layer
                 for curr_layer_index in range(self.layers - 1, -1, -1):
                     old_curr_layer_weights = self.weights[curr_layer_index]
-
 
     def sigma(self, val):
         return 1 / (1 + exp(-1 * val))
