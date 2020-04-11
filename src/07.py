@@ -14,7 +14,8 @@ def parse_haffman_code(coded_str: str, sym_table: dict):
     """
     result = ''
     sub_str, coded_str = coded_str[0], coded_str[1:]
-    while len(coded_str) != 0:
+
+    while coded_str:
         if sub_str in sym_table:
             result += sym_table[sub_str]
             sub_str = coded_str[0]

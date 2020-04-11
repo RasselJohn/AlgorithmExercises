@@ -1,6 +1,8 @@
-﻿def get_sequence_by_result_sum(numbers: list, result_sum: int):
+﻿# Get all sequence with numbers and operators ('+' or '-'), where result equals the certain sum.
+
+def get_sequence_by_result_sum(numbers: list, result_sum: int):
     """
-    Return all sequence with numbers and operators '+' or '-',
+    Return all sequence with numbers and operators ('+' or '-'),
     where result equals result_sum.
     If it cannot - return None
     :param numbers: list of int
@@ -31,13 +33,11 @@
         raise ValueError('Incorrect numbers list.')
 
     operations = ['-' for i in range(1, len(numbers))]
-    oper_len = len(operations)
-    curr_sum = 0
+    operations_count = len(operations)
     repeat_count = 2 ** (len(numbers) - 1)
 
     while repeat_count > 0:
-
-        for i in range(0, oper_len):
+        for i in range(operations_count):
             if operations[i] == '-':
                 operations[i] = '+'
                 break
@@ -45,7 +45,7 @@
                 operations[i] = '-'
 
         curr_sum = numbers[0]
-        for i in range(0, oper_len):
+        for i in range(operations_count):
             if operations[i] == '+':
                 curr_sum += numbers[i + 1]
             else:
@@ -53,7 +53,7 @@
 
         # return all variants
         if result_sum == curr_sum:
-            second_part = ' '.join(f'{operations[i]} {numbers[i + 1]}' for i in range(0, oper_len))
+            second_part = ' '.join(f'{operations[i]} {numbers[i + 1]}' for i in range(0, operations_count))
             yield f'{numbers[0]} {second_part} = {result_sum}'
 
         repeat_count -= 1

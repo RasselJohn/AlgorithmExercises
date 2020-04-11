@@ -1,4 +1,8 @@
-﻿def is_prime(number):
+﻿# Check number on primary.
+import math
+
+
+def is_prime(number):
     """
     If number is prime - return True
     :param number: int
@@ -19,7 +23,6 @@
         ...
     ValueError: Number must be more than 2!
     """
-    import math
 
     if number < 2:
         raise ValueError("Number must be more than 2!")
@@ -27,12 +30,12 @@
     if number // 2 == 0:
         return False
 
-    k = 3
-    t = math.floor(number ** 0.5)
-    while (k <= t) and ((number % k) != 0):
-        k += 2
+    curr = 3
+    square_root = math.floor(number ** 0.5)
+    while (curr <= square_root) and (number % curr != 0):
+        curr += 2
 
-    return k > t
+    return curr > square_root
 
 
 if __name__ == "__main__":

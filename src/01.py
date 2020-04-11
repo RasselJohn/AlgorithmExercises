@@ -1,4 +1,6 @@
-﻿def find_prime_numbers(left_border: int, right_border: int):
+﻿# Get prime numbers in interval.
+
+def find_prime_numbers(left_border: int, right_border: int):
     """
     Return all prime numbers in interval.
     :param left_border: int

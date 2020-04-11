@@ -1,9 +1,9 @@
-# There are a integer number 'n'(1 ≤ n ≤ 10^5),
-# and array A[1…n] from 'n' different natural numbers(1 ≤ A[i] ≤ 10^9) to increasing in first row.
-# In second row there are a integer number 'k'(1 ≤ k ≤ 10^5) and
-# and array B[1…k] from 'k' different natural numbers(1 ≤ B[j] ≤ 10^9).
-# For each item in B should print index 'i'(1 ≤ i ≤n) for A[i]=B[j]
-# else print '-1' if this item does not exist.
+# There are an integer number 'n'(1 ≤ n ≤ 10^5),
+# and array A[1…n] with 'n' different natural numbers(1 ≤ A[i] ≤ 10^9) to increasing in first row.
+# In second row there are an integer number 'k'(1 ≤ k ≤ 10^5)
+# and array B[1…k] with 'k' different natural numbers(1 ≤ B[j] ≤ 10^9).
+# For each item in B there should print an index 'i'(1 ≤ i ≤n) for A[i]=B[j]
+# else to print '-1' if this item does not exist.
 
 
 def get_item(arr, val):
@@ -34,8 +34,6 @@ def main(array_str, values_str):
     -1 -1
     """
 
-    # array_len, *array = [int(i) for i in input().split(' ')]
-    # values_len, *values = [int(i) for i in input().split(' ')]
     array_len, *array = [int(i) for i in array_str.split(' ')]
     values_len, *values = [int(i) for i in values_str.split(' ')]
     print(' '.join(str(get_item(array, val)) for val in values))

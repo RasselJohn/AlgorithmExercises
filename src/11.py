@@ -9,15 +9,15 @@
 # •	script has to be an execute file;
 # •	text data(file) may be very big(40Gb!).
 
-
 import heapq
+import os
 import random
 import string
 import time
 from traceback import format_exc
 
 
-def generate_file_with_numbers(file_name, max_digit_counts=1001, exponent=100):
+def generate_file_with_numbers(file_name, max_digit_counts=1001, exponent=3):
     file = open(file_name, 'w')
 
     for i in range(10 ** exponent):
@@ -55,16 +55,18 @@ class NMaxHeap:
         '''
         if n_max_count < 1:
             raise ValueError('Param "n_max_count" must not be less 1.')
-        f = open(self.file_name, 'r')
-        for line in f:
+
+        file = open(self.file_name, 'r')
+        for line in file:
             number = int(line)
             l_num = len(line.strip())
+
             if l_num in self.final_collection:
                 self.update_item(number, l_num)
             else:
                 self.create_item(number, l_num)
 
-        f.close()
+        file.close()
         return heapq.nlargest(n_max_count, heapq.merge(*self.final_collection.values()))
 
     def create_item(self, number, l_num):
@@ -72,6 +74,7 @@ class NMaxHeap:
             heapq.heappush(self.collection_keys, l_num)
             self.final_collection[l_num] = [number]
             self.length += 1
+
         else:
             if self.final_collection[self.collection_keys[0]][0] < number:
                 heapq.heappop(self.final_collection[self.collection_keys[0]])
@@ -104,45 +107,54 @@ if __name__ == '__main__':
             'For exit insert "q".\nCommand:'
         )
 
-        file_name = 'big_file'
+        assets_dir = os.path.join(os.path.pardir, 'assets')
+        file_name = os.path.join(assets_dir, 'big_file')
         if variant == '1':
             sub_variant = input(
                 f'Warning! There will be created file with name "{file_name}".\n'
                 f'If this file exists - it will be overwritten.\n'
+                f'It is long operation!\n'
                 f'For continue press "Enter".\n'
                 f'For exit insert any symbol.\nCommand:'
             )
             if sub_variant:
                 exit()
 
-            # generate_file_with_numbers(file_name)
+            print(f'File "{file_name}" is generating...')
+            generate_file_with_numbers(file_name)
             print(f'File "{file_name}" with numbers was generated.')
         elif variant == '2':
             command = input(
                 f'File with default name "{file_name}" will be read.\n'
                 f'Warning! File must be in current directory with script!\n'
+                f' File can be created through variant 1.\n'
                 f'For continue press "Enter".\n'
                 f'For exit insert any symbol.\nCommand:'
             )
             if command:
                 exit()
 
-            n = int(input(f'Print "n"(integer =< 10 000).\nFor exit print "q".\nCommand:'))
+            n = int(input(f'Print "n"(integer <= 10 000).\nFor exit print "q".\nCommand:'))
             if n == 'q':
                 exit()
 
             print("Process is becoming. Please, wait ...")
+
             start = time.time()
             n_max = NMaxHeap(file_name).get_n_max(n)
+
             for i in n_max:
                 print(f'Result: {i}.\n')
+
             end = time.time()
+
             print('During: {} sec.'.format(end - start))
         elif variant == '3':
             import doctest
 
-            doctest.testmod(verbose=True,
-                            extraglobs={'little_obj': NMaxHeap('../assets/test_file')})
+            doctest.testmod(
+                verbose=True,
+                extraglobs={'little_obj': NMaxHeap(os.path.join(assets_dir, 'test_file'))}
+            )
     except Exception:
         print(f'Error: {format_exc()}')
-        exit()

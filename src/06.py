@@ -1,8 +1,5 @@
-# Huffman coding.
-
+# Convert string to Haffman's code through tree.
 from collections import Counter
-
-sorted_tree = lambda tree: sorted(tree, key=lambda ss: ss[0], reverse=True)
 
 
 class Node:
@@ -49,6 +46,7 @@ def haffman_code(string: str):
         raise ValueError('String empty.')
 
     counter = Counter(string)
+    sorted_tree = lambda tree: sorted(tree, key=lambda ss: ss[0], reverse=True)
     tree = sorted_tree([[frequency, Node(symbol)] for symbol, frequency in counter.items()])
 
     if len(tree) == 1:

@@ -1,3 +1,3 @@
-*Algorithm Exercises*
+*Algorithm's Exercises*
 =================
-Algorithm exercises was realized on Python.
+Algorithm's exercises on Python

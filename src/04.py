@@ -1,4 +1,8 @@
-﻿def convert_greek_number_to_arabic(greek_num):
+﻿# Convert greek number to arabic number.
+from functools import reduce
+
+
+def convert_greek_number_to_arabic(greek_num):
     """
     Convert greek number to arabic number
     :param greek_num: str
@@ -32,9 +36,10 @@
         ...
     ValueError: Incorrect greek number.
     """
-    from functools import reduce
-    link = {'I': 1, 'V': 5, 'X': 10, 'L': 50,
-            'C': 100, 'D': 500, 'M': 1000}
+    link = {
+        'I': 1, 'V': 5, 'X': 10, 'L': 50,
+        'C': 100, 'D': 500, 'M': 1000
+    }
 
     if not greek_num or any(g not in link.keys() for g in greek_num):
         raise ValueError('Incorrect greek number.')

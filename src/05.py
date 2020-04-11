@@ -1,4 +1,4 @@
-﻿# Change 2 variables without third
+﻿# Change 2 variables without third.
 
 # one way
 a = 3

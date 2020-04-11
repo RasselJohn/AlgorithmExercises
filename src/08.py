@@ -38,6 +38,7 @@ class MaxHeap:
 
         next_index = 1
         while 0 <= next_index < len_heap:
+
             if next_index + 1 < len_heap:
                 if (self.heap[next_index] > self.heap[curr]
                         and self.heap[next_index] >= self.heap[next_index + 1]):
@@ -192,6 +193,7 @@ def max_heap_handler(commands):
     h = MaxHeap()
     for c in commands.split('\n'):
         command = c.split(' ')
+
         if len(command) > 1:
             val = int(command[1])
             h.insert(val)
