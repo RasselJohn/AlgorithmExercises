@@ -2,7 +2,7 @@
 # and array A[1…n] with 'n' different natural numbers(1 ≤ A[i] ≤ 10^9) to increasing in first row.
 # In second row there are an integer number 'k'(1 ≤ k ≤ 10^5)
 # and array B[1…k] with 'k' different natural numbers(1 ≤ B[j] ≤ 10^9).
-# For each item in B there should print an index 'i'(1 ≤ i ≤n) for A[i]=B[j]
+# For each item in B there should print an index 'i'(1 ≤ i ≤ n) for A[i] = B[j]
 # else to print '-1' if this item does not exist.
 
 

@@ -6,7 +6,6 @@
 # •	number can include max 1000 digits;
 # •	script should get only 1 param - 'n';
 # •	it must have tests;
-# •	script has to be an execute file;
 # •	text data(file) may be very big(40Gb!).
 
 import heapq
