@@ -36,3 +36,17 @@ Algorithm must print increasing sequence.
      • script should get only 1 param - `n`;  
      • it must have tests;  
      • **text data(file) may be very big (before 40Gb!).**
+
+- **12.py** - 
+Script must check string with brackets on correctness.
+There are 3 different ways(functions) for checking.
+If string is correct - function returns 'Success'
+else position(start from = 1(!)) with symbol which breaks sequence.
+Examples:
+```
+Input         =>   Output
+"({([])})"    =>   'Success'
+"()[]}"       =>       5
+"[]([]"       =>       3
+"{*}"         =>   'Success'
+``` 
