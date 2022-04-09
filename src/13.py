@@ -1,4 +1,4 @@
-# There are 2 int numbers 'n','m'.
+# 2 int numbers 'n','m' are given.
 # If anyone divides to another - print '1' otherwise '0'.
 # Attention! Conditions and loops ('if', 'while') are banned!
 
