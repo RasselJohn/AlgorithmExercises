@@ -19,7 +19,7 @@ Algorithm's exercises on Python with doctests.
 
 - **08.py** - Realizing of **max-heap**.
 
-- **09.py** - Given:
+- **09.py** - Given:  
         - integer number `n (where 1 ≤ n ≤ 10^5)`;  
         - array `A[1…n] (where 1 ≤ A[i] ≤ 10^9`);  
         - integer number `k (where 1 ≤ k ≤ 10^5)`;  
@@ -37,8 +37,7 @@ Algorithm's exercises on Python with doctests.
 - **10.py** - `n` natural numbers (`where 1 ≤ n ≤ 10^4 and every number ≤ 10`) are given.
 Algorithm must print increasing sequence.
 
-- **11.py** -
-    Script must read text data and print `n` max numbers from it.
+- **11.py** - Script must read text data and print `n` max numbers from it.
     But script has to perform extra conditions:
      • number is any digits sequence;  
      • number can include max **1000** digits;  
@@ -46,8 +45,7 @@ Algorithm must print increasing sequence.
      • it must have tests;  
      • **text data(file) may be very big (before 40Gb!).**
 
-- **12.py** -
-Script must check string with brackets on correctness.
+- **12.py** - Script must check string with brackets on correctness.
 There are 3 different ways(functions) for checking.
 If string is correct - function returns 'Success'
 else position(start from = 1(!)) with symbol which breaks sequence.
@@ -61,13 +59,11 @@ Input         =>   Output
 "{*}"         =>   'Success'
 ```
 
-- **13.py** - 
-2 int numbers 'n','m' are given.
+- **13.py** - Two int numbers ('n','m') are given.
 If anyone divides to another - print '1' otherwise '0'.
 Attention! Conditions and loops ('if', 'while') are banned!
 
-- **14.py** -  
-Collection of commands are given (correct sequence of commands are guaranteed).
+- **14.py** - Collection of commands are given (correct sequence of commands are guaranteed).
 Function adds/removes int numbers in stack and control max value with access O(1).
 Type of commands:
 'push <num>' - add to stack,
