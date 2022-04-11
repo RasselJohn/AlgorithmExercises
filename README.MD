@@ -61,12 +61,12 @@ Input         =>   Output
 "{*}"         =>   'Success'
 ```
 
-- **13.py**
+- **13.py** - 
 2 int numbers 'n','m' are given.
 If anyone divides to another - print '1' otherwise '0'.
 Attention! Conditions and loops ('if', 'while') are banned!
 
-- **14.py**
+- **14.py** -  
 Collection of commands are given (correct sequence of commands are guaranteed).
 Function adds/removes int numbers in stack and control max value with access O(1).
 Type of commands:
