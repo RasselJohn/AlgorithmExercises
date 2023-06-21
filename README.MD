@@ -69,3 +69,7 @@ Type of commands:
 'push <num>' - add to stack,
 'pop' - remove from stack,
 'max' - just print max.
+
+- **15.py** - By the number 'n' (1≤n≤10^9) find max number 'k', 
+which allows to set 'n' like a sum of 'k' different(!)  summands.
+Function must return array of summands(where len(summands)==k).
