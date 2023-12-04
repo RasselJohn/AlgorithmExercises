@@ -1,7 +1,7 @@
 *Algorithm's Exercises*
 =================
 
-Algorithm's exercises on Python with doctests.
+Algorithm's exercises on Python with doctests. Some tasks were taken from LeetCode.
 
 - **01.py** - Get prime numbers in interval.
 
@@ -85,3 +85,8 @@ Input         =>   Output
 - **21.py** - An array is monotonic if it is either monotone increasing or monotone decreasing. An array nums is
   monotone increasing if for all i <= j, nums[i] <= nums[j]. An array nums is monotone decreasing if for all i <= j,
   nums[i] >= nums[j]. Given an integer array nums, return true if the given array is monotonic, or false otherwise.
+  
+- **22.py** - You are given two non-empty linked lists representing two non-negative integers. 
+  The digits are stored in reverse order, and each of their nodes contains a single digit. 
+  Add the two numbers and return the sum as a LINKED LIST(!). 
+  You may assume the two numbers do not contain any leading zero, except the number 0 itself.
